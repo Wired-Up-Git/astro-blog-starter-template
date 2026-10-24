@@ -1,50 +1,145 @@
----
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
----
+<!DOCTYPE html>
+<html lang=class="str">"en">
+<head>
+    <meta charset=class="str">"UTF-class="num">8">
+    <meta name=class="str">"viewport" content=class="str">"width=device-width, initial-scale=class="num">1.0">
+    <title>Wired-Up - Maintenance Mode</title>
+    <style>
+        * {
+            margin: class="num">0;
+            padding: class="num">0;
+            box-sizing: border-box;
+            font-family: class="str">'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+        body {
+            background-color: class=class="str">"cmt">#0f172a;
+            color: class=class="str">"cmt">#e2e8f0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            background-color: rgba(class="num">15, class="num">23, class="num">42, class="num">0.7);
+            border-radius: 12px;
+            box-shadow: class="num">0 8px 32px rgba(class="num">0, class="num">0, class="num">0, class="num">0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            height: 60px;
+            filter: drop-shadow(class="num">0 class="num">0 10px rgba(class="num">59, class="num">130, class="num">246, class="num">0.5));
+        }
+
+        h1 {
+            font-size: class="num">2.5rem;
+            margin-bottom: 15px;
+            color: class=class="str">"cmt">#3b82f6;
+            font-weight: class="num">700;
+        }
+
+        p {
+            font-size: class="num">1.1rem;
+            line-height: class="num">1.6;
+            margin-bottom: 25px;
+            color: class=class="str">"cmt">#cbd5e1;
+        }
+
+        .timer {
+            font-size: class="num">1.2rem;
+            font-weight: class="num">500;
+            color: class=class="str">"cmt">#60a5fa;
+            margin-top: 20px;
+        }
+
+        .contact {
+            margin-top: 30px;
+            font-size: class="num">0.95rem;
+            color: class=class="str">"cmt">#94a3b8;
+        }
+
+        .contact a {
+            color: class=class="str">"cmt">#3b82f6;
+            text-decoration: none;
+            font-weight: class="num">500;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        @media(max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 30px;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class=class="str">"container">
+        <div class=class="str">"logo">
+            ![Wired-Up Logo](not-generated)
+        </div>
+        <h1>Wired-Up is Under Maintenance</h1>
+        <p>Weclass="str">'re currently performing scheduled maintenance to improve your experience. Our team is working hard to bring you an even better service.</p>
+        <p>Please check back soon. We appreciate your patience and understanding.</p>
+        <div class=class="str">"timer">
+            Expected completion: <span id=class="str">"countdown">Loading...</span>
+        </div>
+        <div class=class="str">"contact">
+            For urgent inquiries, contact us at <a href=class="str">"mailto:support@wired-up.co.za">support@wired-up.co.za</a>
+        </div>
+    </div>
+
+    <script>
+        class=class="str">"cmt">// Set the date we're counting down to
+        const maintenanceEndDate = new Date();
+        maintenanceEndDate.setHours(maintenanceEndDate.getHours() + class="num">4); class=class="str">"cmt">// Example: class="num">4 hours from now
+
+        class=class="str">"cmt">// Update the count down every class="num">1 second
+        const x = setInterval(function() {
+            class=class="str">"cmt">// Get todayclass="str">'s date and time
+            const now = new Date().getTime();
+            
+            class=class="str">"cmt">// Find the distance between now and the count down date
+            const distance = maintenanceEndDate - now;
+            
+            class=class="str">"cmt">// Time calculations for days, hours, minutes and seconds
+            const hours = Math.floor((distance % (class="num">1000 * class="num">60 * class="num">60 * class="num">24)) / (class="num">1000 * class="num">60 * class="num">60));
+            const minutes = Math.floor((distance % (class="num">1000 * class="num">60 * class="num">60)) / (class="num">1000 * class="num">60));
+            const seconds = Math.floor((distance % (class="num">1000 * class="num">60)) / class="num">1000);
+            
+            class=class="str">"cmt">// Display the result in the element with id=class="str">"countdown"
+            document.getElementById(class="str">"countdown").innerHTML = 
+                hours.toString().padStart(class="num">2, 'class="num">0class="str">') + class="str">"h " + 
+                minutes.toString().padStart(class="num">2, 'class="num">0class="str">') + class="str">"m " + 
+                seconds.toString().padStart(class="num">2, 'class="num">0') + class="str">"s";
+            
+            class=class="str">"cmt">// If the count down is finished, show a message
+            if (distance < class="num">0) {
+                clearInterval(x);
+                document.getElementById(class="str">"countdown").innerHTML = class="str">"UP & RUNNING!";
+            }
+        }, class="num">1000);
+    </script>
+</body>
 </html>
